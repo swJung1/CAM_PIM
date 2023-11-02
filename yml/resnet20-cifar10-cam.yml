@@ -1,0 +1,31 @@
+# =========================== Basic Settings ===========================
+# data
+dataset: cifar10
+model: resnet20
+
+batch_size: 1024
+num_samples: None
+
+# =========================== Model Settings ================================
+# default: vanilla
+# inference = 1: Quantize
+# inference = 2: Quantize + ADC
+
+# first or last layer
+fl_abits: 8
+fl_wbits: 8
+fl_inference: 1
+fl_subarray: 100_0000
+fl_adcbits: 32
+fl_zero_point_opt: True
+
+# hidden layer
+hid_abits: 8
+hid_wbits: [[0,8]]
+hid_inference: 3
+hid_subarray: [100_0000, 256, 128, 64, 32, 16]
+hid_adcbits: [32, 8, 5, 4, 3, 2, 1]
+hid_adclamp: 0
+hid_zero_point_opt: True
+
+cam: True

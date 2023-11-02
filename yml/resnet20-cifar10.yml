@@ -1,0 +1,38 @@
+# =========================== Basic Settings ===========================
+# data
+dataset: cifar10
+model: resnet20
+
+batch_size: 512
+num_samples: None
+
+# optimizer
+# lr: 0.1
+# epochs: 5
+# lr_scheduler: step
+# optimizer: SGD
+# momentum: 0.9
+# weight_decay: 0.0005
+# nesterov: False
+# split_param: True
+
+# =========================== Model Settings ================================
+# default: vanilla
+# inference = 1: Quantize
+# inference = 2: Quantize + ADC
+
+# first or last layer
+fl_abits: 8
+fl_wbits: 8
+fl_inference: 1
+fl_subarray: 100_0000
+fl_adcbits: 32
+fl_zero_point_opt: True
+
+# hidden layer
+hid_abits: 8
+hid_wbits: 8
+hid_inference: 3
+hid_subarray: 100_0000
+hid_adcbits: 8
+hid_zero_point_opt: False
